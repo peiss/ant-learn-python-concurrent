@@ -1,5 +1,6 @@
-from tmp import blog_spider
+import blog_spider
 import threading
+import time
 
 
 def single_thread():
@@ -12,9 +13,10 @@ def single_thread():
 def multi_thread():
     print("multi_thread begin")
     threads = []
-
     for url in blog_spider.urls:
-        threads.append(threading.Thread(target=blog_spider.craw, args=(url,)))
+        threads.append(
+            threading.Thread(target=blog_spider.craw, args=(url,))
+        )
 
     for thread in threads:
         thread.start()
@@ -25,15 +27,13 @@ def multi_thread():
     print("multi_thread end")
 
 
-import time
-
 if __name__ == "__main__":
     start = time.time()
     single_thread()
     end = time.time()
-    print("single thread:", end - start, "seconds")
+    print("single thread cost:", end - start, "seconds")
 
     start = time.time()
     multi_thread()
     end = time.time()
-    print("multi thread:", end - start, "seconds")
+    print("multi thread cost:", end - start, "seconds")
