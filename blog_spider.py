@@ -8,6 +8,7 @@ urls = [
 
 
 def craw(url):
+    print("craw url: ", url)
     r = requests.get(url)
     return r.text
 
