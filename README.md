@@ -1,4 +1,7 @@
 # ant-learn-python-concurrent
+
+***本仓库迁移回国内，速度更快：[gitee链接](https://gitee.com/antpython/ant-learn-python-concurrent)***
+
 Python并发编程专题
 
 微信公众号：
